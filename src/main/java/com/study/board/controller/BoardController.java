@@ -8,11 +8,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class BoardController {
 
-    @GetMapping("/")
-    @ResponseBody
-    public String main() {
+  @GetMapping("/board/write") //localhost:8080/board/write 로 접속하면 보여짐
+  public String boardWriteForm(){ //boardWriteForm은 변수명같은데,,
 
-        return "DB에 테이블 생성중..";
-
-    }
+      return "boardwrite"; //템플릿안에있는 html 파일
+  }
 }
