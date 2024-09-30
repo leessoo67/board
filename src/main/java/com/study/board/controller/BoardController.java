@@ -12,7 +12,7 @@ public class BoardController {
     @ResponseBody
     public String main() {
 
-        return "Hello World";
+        return "DB에 테이블 생성중..";
 
     }
 }
