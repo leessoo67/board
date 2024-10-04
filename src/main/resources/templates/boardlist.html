@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--5-->
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 리스트 페이지</title>
+</head>
+
+
+<!--2-->
+<style>
+    .layout{
+     width: 500px;
+     margin: 0 auto;
+     margin-top : 40px;
+ }
+</style>
+<body>
+
+    <div class="layout">
+        <table>
+            <thead>
+                <tr>
+                    <th>글번호</th>
+                    <th>제목</th>
+                </tr>
+            </thead>
+            <tbody>
+            <!--            6-->
+                <tr th:each="board : ${list}"> <!--controller에서 보낸 list가 여기 list에 담김-- 여기 list엔 board가 담겨있음 each라는 건 반복문-->
+                    <td th:text="${board.id}">1</td> <!--text를 넣어줄건데 board 안에 있는  id -->
+                    <td th:text="${board.title}">제목입니다.</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</body>
+</html>
