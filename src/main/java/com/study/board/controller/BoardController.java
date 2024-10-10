@@ -46,6 +46,13 @@ public class BoardController {
       return "boardlist"; //boardlist.html을 만들어줘야함.
   }
 
+  @GetMapping("board/view") //localhost:8080/board/view?id=1
+  public String boardView(Model model, Integer id){
 
+      model.addAttribute("board", boardService.boardView(id));
+
+      return "boardview"; //해당하는 html을 적어준다.
+
+  }
 
 }

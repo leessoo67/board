@@ -16,16 +16,26 @@ public class BoardService {
     @Autowired
     private BoardRepository boardRepository;
 
+    // 글 작성 처리
     public void write(Board board) { //Board 엔티티 객체를 받아서 데이터베이스에 저장
 
         boardRepository.save(board);
 
     }
 
+
     //3 글을 불러와야 하니까 서비스에서 처리
+    // 게시글 리스트 처리
     public List<Board> boardList() {// list에 빨간색이 뜨면 컨트롤 스페이스
 
         return boardRepository.findAll();
+
+    }
+
+    //특정 게시글 불러오기
+    public Board boardView(Integer id) {
+
+        return boardRepository.findById(id).get();
 
     }
 }
