@@ -54,5 +54,12 @@ public class BoardController {
       return "boardview"; //해당하는 html을 적어준다.
 
   }
+  @GetMapping("board/delete")
+  public String boardDelete(Integer id) {
+
+      boardService.boardDelete(id);
+
+      return "redirect:/board/list";
+  }
 
 }
